@@ -1,0 +1,128 @@
+@import "compass/utilities/color";
+
+$base-blue: #00a0e9; // 主色 主要用户按钮
+
+$base-withe: #ffffff;
+
+// 黑色系
+$base-black: #333333; // 文字主色
+$base-black-light: #666666; // 辅助文字色
+$base-black-lighter: #999999; // 辅助文字色
+$base-black-lighter-light: #c4c4c4; // 禁止按钮文字颜色
+
+// 灰色系
+$base-gray-light: #fafafa; // 侧栏背景色
+$base-gray: #f3f3f4;
+$base-gray-dark: #dcdcdc; // 描边色 禁用描边色
+$base-gray-darker: #dcdcdc; // 侧边栏滚动条色
+
+$base-green: #73bc22;
+
+$base-orange: #ec9700;
+
+$base-red: #ed6844;
+
+
+//字体
+$font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+$font-size-base: 12px;
+$font-size-lg: 16px;
+$font-size-md: 14px;
+$border-radius: 3px;
+$line-height: 16px;
+
+// 禁止
+$base-disabled-bg: #f2f2f2;
+$base-disabled-fn: #c4c4c4;
+$base-disabled-bd: #e6e6e6;
+
+
+// 尺寸 内边距(vertical, horizontal) 字体大小(fz) 行高(lh)
+$md: (
+  vertical: 6px,
+  horizontal: 18px,
+  fz: $font-size-base,
+  lh: $line-height
+);
+
+$lg: (
+  vertical: 8px,
+  horizontal: 20px,
+  fz: $font-size-base,
+  lh: $line-height
+);
+
+$sm: (
+  vertical: 3px,
+  horizontal: 12px,
+  fz: $font-size-base,
+  lh: $line-height
+);
+
+$sg: (
+  vertical: 6px,
+  horizontal: 8px,
+  fz: $font-size-base,
+  lh: $line-height
+);
+
+
+// 皮肤 背景色(bg-color) 边框色(bd-color) 字体颜色(ft-color)
+$primary: (
+  default: (
+    bg-color: $base-blue,
+    bd-color: $base-blue,
+    ft-color: $base-withe
+  ),
+  hover: (
+    bg-color: darken($base-blue, 5%),
+    bd-color: darken($base-blue, 5%),
+    ft-color: $base-withe
+  )
+);
+
+$info: (
+  default: (
+    bg-color: $base-withe,
+    bd-color: $base-gray-darker,
+    ft-color: $base-black-light
+  )
+);
+
+// 没有定义hover 统一加深 5%
+$success: (
+  default: (
+    bg-color: $base-green,
+    bd-color: $base-green,
+    ft-color: $base-withe
+  )
+);
+
+$warn: (
+  default: (
+    bg-color: $base-orange,
+    bd-color: $base-orange,
+    ft-color: $base-withe
+  )
+);
+
+$danger: (
+  default: (
+    bg-color: $base-red,
+    bd-color: $base-red,
+    ft-color: $base-withe
+  )
+);
+
+$link: (
+  default: (
+    bg-color: transparent,
+    bd-color: transparent,
+    ft-color: $base-black-light
+  ),
+  hover: (
+    bg-color: transparent,
+    bd-color: transparent,
+    ft-color: $base-blue
+  )
+);

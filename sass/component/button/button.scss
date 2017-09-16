@@ -1,0 +1,180 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/typography/text";
+
+@import "../../mixins/utils";
+
+@import "./variables";
+
+// 按钮的基础属性
+.m-btn {
+  // 行级快级元素
+  @include inline-block;
+  @include box-sizing($box-sizing);
+  @include nowrap;
+  @include border-radius($border-radius);
+
+  // 禁止选择
+  @include not-user-select;
+
+  font-weight:700;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+
+  &:focus, &:hover, &:active, &:visited {
+    text-decoration: none;
+    outline: none;
+  }
+
+  >.text, >.icon {
+    @include inline-block
+  }
+}
+
+// 如果是a标签带button样式
+a.m-btn {
+  @include hover-link;
+  font-weight:normal;
+}
+
+
+// 组合按钮的基础属性
+.m-btn-group {
+  @include clearfix;
+  > .m-btn {
+    @include float(left);
+    margin-left: -1px;
+    @include border-radius(0);
+
+    &:first-child {
+      @include border-bottom-left-radius($border-radius);
+      @include border-top-left-radius($border-radius);
+    }
+
+    &:last-child {
+      @include border-top-right-radius($border-radius);
+      @include border-bottom-right-radius($border-radius);
+    }
+  }
+}
+
+
+// 按钮
+@mixin btn-skin($background, $border, $text-color) {
+  @if $background != null {
+    background-color: $background;
+  }
+
+  border-width: 1px;
+  border-style: solid;
+  @if($border != null) {
+    border-color: $border;
+  } @else {
+    border-color: transparent;
+  }
+
+  color: $text-color;
+  label{
+    span:before {
+      color: $text-color;
+    }
+  }
+}
+
+// 尺寸
+@each $type, $obj in $button-size {
+  @if($type == 'default') {
+    .m-btn {
+      @include features-size(map_get($obj, vertical),
+        map_get($obj, horizontal),
+        map_get($obj, fz),
+        map_get($obj, lh));
+
+      > .icon {
+        width: map_get($obj, fz);
+        height: map_get($obj, fz);
+      }
+    }
+  } @else {
+    .m-btn.m-btn-#{$type} {
+      @include features-size(map_get($obj, vertical),
+        map_get($obj, horizontal),
+        map_get($obj, fz),
+        map_get($obj, lh));
+
+      @if($type == 'sg') {
+        &{
+          letter-spacing: 0;
+        }
+      }
+
+      > .icon {
+        width: map_get($obj, fz);
+        height: map_get($obj, fz);
+      }
+    }
+  }
+}
+
+
+// 皮肤
+@each $type, $obj in $button-skin {
+  $default: map_get($obj, default);
+  .m-btn.m-btn-#{$type} {
+    @include btn-skin(map_get($default, bg-color),
+      map_get($default, bd-color),
+      map_get($default, ft-color));
+
+    > .icon {
+      color: map_get($default, ft-color);
+    }
+
+    &.active, &:hover, &:active, &:focus {
+      // 没有定义hover 统一加深 5%
+      @if (map_has_key($obj, hover)) {
+        $hover: map_get($obj, hover);
+        @include btn-skin(map_get($hover, bg-color),
+          map_get($hover, bd-color),
+          map_get($hover, ft-color));
+      } @else {
+        @include btn-skin(darken(map_get($default, bg-color), 5%),
+          darken(map_get($default, bd-color), 5%),
+          map_get($default, ft-color));
+      }
+    }
+    @include disabled;
+  }
+}
+
+
+// 按钮组类型
+@each $type, $obj in $button-skin {
+  $default: map_get($obj, default);
+  .m-btn-group.m-btn-#{$type} {
+    .m-btn {
+      &.active, &:hover, &:active, &:focus {
+        // 没有定义hover 统一加深 5%
+        $border-color: null;
+        @if (map_has_key($obj, hover)) {
+          $hover: map_get($obj, hover);
+          $border-color: map_get($hover, bd-color);
+          @include btn-skin(map_get($hover, bg-color),
+            map_get($hover, bd-color),
+            map_get($hover, ft-color));
+        } @else {
+          $border-color: darken(map_get($default, bd-color), 5%);
+          @include btn-skin(darken(map_get($default, bg-color), 5%),
+            darken(map_get($default, bd-color), 5%),
+            map_get($default, ft-color));
+        }
+
+        // 由于 margin-left: -1px; 这个处理兄弟元素
+        z-index: 1;
+      }
+    }
+  }
+}

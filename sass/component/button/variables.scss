@@ -1,0 +1,13 @@
+@import "../../variables/global";
+
+$box-sizing: content-box !default;
+
+$button-skin: (primary, $primary),
+  (info, $info),
+  (success, $success),
+  (warn, $warn),
+  (danger, $danger),
+  (link, $link);
+
+
+$button-size: (lg, $lg), (md, $md), (sm, $sm), (sg, $sg), (default, $md);
