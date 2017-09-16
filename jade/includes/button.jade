@@ -1,0 +1,92 @@
+.doc-section
+    .markdown-body
+        :markdown
+            ##按钮
+.doc-section
+    .example
+        .example-block
+            a.m-btn.m-btn-primary(type="button") 主体
+            button.m-btn.m-btn-success(type="button") 成功
+            button.m-btn.m-btn-info(type="button") 信息
+            button.m-btn.m-btn-warn(type="button") 警告
+            button.m-btn.m-btn-danger(type="button") 危险
+            button.m-btn.m-btn-danger.disabled(type="button") 禁止
+            button.m-btn.m-btn-link(role="button") 链接按钮
+        .example-block
+            button.m-btn.m-btn-primary.m-btn-sm(type="button") 一般
+            button.m-btn.m-btn-success.m-btn-sm(type="button") 成功
+            button.m-btn.m-btn-info.m-btn-sm(type="button") 信息
+            button.m-btn.m-btn-warn.m-btn-sm(type="button") 警告
+            button.m-btn.m-btn-danger.m-btn-sm(type="button") 危险
+            button.m-btn.m-btn-danger.m-btn-sm(type="button" disabled='') 禁止
+        .example-block
+            button.m-btn.m-btn-success.m-btn-lg(type="button") 成功
+            button.m-btn.m-btn-success.m-btn-lg.disabled(type="button") Loading...
+        .example-block
+            button.m-btn.m-btn-primary.m-btn-lg˚(type="button")
+                svg.icon(aria-hidden="true")
+                    use(xlink:href="#mui-check")
+                span.text &nbsp;主体
+            button.m-btn.m-btn-primary.m-btn-lg(type="button")
+                svg.icon(aria-hidden="true")
+                    use(xlink:href="#mui-check-active")
+                span.text &nbsp;主体
+        .example-block
+            button.m-btn.m-btn-primary(type="button")
+                svg.icon(aria-hidden="true")
+                    use(xlink:href="#mui-check")
+                span.text &nbsp;主体
+            button.m-btn.m-btn-info(type="button")
+                svg.icon(aria-hidden="true")
+                    use(xlink:href="#mui-check-active")
+                span.text &nbsp;主体
+    .highlight
+
+.doc-section
+    .markdown-body
+        :markdown
+            ### 按钮组
+    .example
+        .example-block
+            .m-btn-group
+                .m-btn.m-btn-info 一号
+                .m-btn.m-btn-info 二号
+                .m-btn.m-btn-info 3号
+                .m-btn.m-btn-info 4号
+        .example-block
+            .m-btn-group.m-btn-primary
+                .m-btn.m-btn-info.m-btn-sg 日
+                .m-btn.m-btn-info.m-btn-sg 周
+                .m-btn.m-btn-info.m-btn-sg 月
+        .example-block
+            .m-btn-group.m-btn-spacing
+                .m-btn-group
+                    .m-btn.m-btn-info 全部
+                    .m-btn.m-btn-info.m-btn-sg
+                        svg.icon(aria-hidden="true")
+                            use(xlink:href="#mui-down")
+                .m-btn-group
+                    .m-btn.m-btn-info 全部撤销
+                    .m-btn.m-btn-info.m-btn-sg
+                        svg.icon(aria-hidden="true")
+                            use(xlink:href="#mui-down")
+        .example-block
+            .m-btn-group.m-btn-danger
+                .m-btn.m-btn-info 一号
+                .m-btn.m-btn-info 二号
+                .m-btn.m-btn-info 3号
+                .m-btn.m-btn-info 4号
+        .example-block
+            .m-btn-group.m-btn-primary
+                .m-btn.m-btn-info 一号
+                .m-btn.m-btn-info.active 二号
+                .m-btn.m-btn-info 3号
+                .m-btn.m-btn-info.disabled 4号
+        .example-block
+            .m-btn-group.m-btn-spacing
+                .m-btn.m-btn-primary 一号
+                .m-btn.m-btn-primary.disabled 二号
+                .m-btn.m-btn-warn 3号
+                .m-btn.m-btn-primary 4号
+    .highlight
+
