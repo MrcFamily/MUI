@@ -1,0 +1,106 @@
+@import "compass/css3";
+@import "variables";
+@import "../../mixins/utils";
+
+@mixin size($size) {
+  .panel-heading, .panel-footer {
+    @include features-size(map_get($size, vertical),
+      map_get($size, horizontal),
+      map_get($size, fz),
+      map_get($size, lh));
+    height: auto;
+  }
+  .panel-heading {
+    .panel-title {
+      font-size: map_get($size, fz);
+    }
+    .panel-delete {
+      > .icon {
+        width: map_get($size, fz);
+        height: map_get($size, fz);
+      }
+    }
+  }
+  .panel-body {
+    padding-left: map_get($size, horizontal);
+    padding-right: map_get($size, horizontal);
+  }
+}
+
+.panel {
+  background-color: $base-withe;
+  border-width: 1px;
+  border-style: solid;
+
+  .panel-heading, .panel-footer {
+    border-style: solid;
+  }
+  .panel-heading {
+    border-bottom-width: 1px;
+    .panel-title {
+      @include inline-block;
+      @include box-sizing($box-sizing);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .panel-delete {
+      float: right;
+      > .icon {
+        cursor: pointer;
+        @include inline-block;
+        @include box-sizing($box-sizing);
+      }
+    }
+  }
+  .panel-footer {
+    border-top-width: 1px;
+  }
+  .panel-body {
+    padding: $base-gap;
+  }
+}
+
+// 尺寸
+@each $type, $size in $panel-size {
+  @if ($type == 'default') {
+    .panel {
+      @include size ($size)
+    }
+  } @else {
+    .panel.panel-#{$type} {
+      @include size ($size)
+    }
+  }
+}
+
+// 面板皮肤
+@each $type, $skin in $panel-line-skin {
+  $default: map_get($skin, default);
+  .panel.panel-line-#{$type} {
+    border-color: map_get($default, bd-color);
+    .panel-heading {
+      border-color: map_get($default, bd-color);
+      .panel-title, .panel-delete > .icon {
+        color: map_get($default, bg-color);
+      }
+    }
+  }
+}
+
+@each $type, $skin in $panel-skin {
+  $default: map_get($skin, default);
+  .panel.panel-#{$type} {
+    border-color: map-get($default, bd-color);
+    .panel-heading {
+      background-color: map-get($default, bg-color);
+      .panel-title, .panel-delete > .icon {
+        color: map_get($default, ft-color);
+      }
+    }
+
+    .panel-heading, .panel-footer {
+      border-color: map-get($default, bd-color);
+    }
+  }
+}

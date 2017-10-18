@@ -1,10 +1,20 @@
 @import "compass/css3";
 @import "compass/utilities";
 @import "compass/typography/text";
-
 @import "../../mixins/utils";
-
 @import "./variables";
+
+@mixin size($size) {
+  @include features-size(map_get($size, vertical),
+    map_get($size, horizontal),
+    map_get($size, fz),
+    map_get($size, lh));
+
+  > .icon {
+    width: map_get($size, fz);
+    height: map_get($size, fz);
+  }
+}
 
 // 按钮的基础属性
 .m-btn {
@@ -17,7 +27,7 @@
   // 禁止选择
   @include not-user-select;
 
-  font-weight:700;
+  font-weight: 500;
   position: relative;
   cursor: pointer;
   text-decoration: none;
@@ -30,7 +40,7 @@
     outline: none;
   }
 
-  >.text, >.icon {
+  > .text, > .icon {
     @include inline-block
   }
 }
@@ -38,9 +48,8 @@
 // 如果是a标签带button样式
 a.m-btn {
   @include hover-link;
-  font-weight:normal;
+  font-weight: normal;
 }
-
 
 // 组合按钮的基础属性
 .m-btn-group {
@@ -62,7 +71,6 @@ a.m-btn {
   }
 }
 
-
 // 按钮
 @mixin btn-skin($background, $border, $text-color) {
   @if $background != null {
@@ -71,14 +79,14 @@ a.m-btn {
 
   border-width: 1px;
   border-style: solid;
-  @if($border != null) {
+  @if ($border != null) {
     border-color: $border;
   } @else {
     border-color: transparent;
   }
 
   color: $text-color;
-  label{
+  label {
     span:before {
       color: $text-color;
     }
@@ -86,44 +94,27 @@ a.m-btn {
 }
 
 // 尺寸
-@each $type, $obj in $button-size {
-  @if($type == 'default') {
+@each $type, $size in $button-size {
+  @if ($type == 'default') {
     .m-btn {
-      @include features-size(map_get($obj, vertical),
-        map_get($obj, horizontal),
-        map_get($obj, fz),
-        map_get($obj, lh));
-
-      > .icon {
-        width: map_get($obj, fz);
-        height: map_get($obj, fz);
-      }
+      @include size($size)
     }
   } @else {
     .m-btn.m-btn-#{$type} {
-      @include features-size(map_get($obj, vertical),
-        map_get($obj, horizontal),
-        map_get($obj, fz),
-        map_get($obj, lh));
+      @include size($size);
 
-      @if($type == 'sg') {
-        &{
+      @if ($type == 'sg') {
+        & {
           letter-spacing: 0;
         }
-      }
-
-      > .icon {
-        width: map_get($obj, fz);
-        height: map_get($obj, fz);
       }
     }
   }
 }
 
-
 // 皮肤
-@each $type, $obj in $button-skin {
-  $default: map_get($obj, default);
+@each $type, $skin in $button-skin {
+  $default: map_get($skin, default);
   .m-btn.m-btn-#{$type} {
     @include btn-skin(map_get($default, bg-color),
       map_get($default, bd-color),
@@ -135,8 +126,8 @@ a.m-btn {
 
     &.active, &:hover, &:active, &:focus {
       // 没有定义hover 统一加深 5%
-      @if (map_has_key($obj, hover)) {
-        $hover: map_get($obj, hover);
+      @if (map_has_key($skin, hover)) {
+        $hover: map_get($skin, hover);
         @include btn-skin(map_get($hover, bg-color),
           map_get($hover, bd-color),
           map_get($hover, ft-color));
@@ -150,17 +141,16 @@ a.m-btn {
   }
 }
 
-
 // 按钮组类型
-@each $type, $obj in $button-skin {
-  $default: map_get($obj, default);
+@each $type, $skin in $button-skin {
+  $default: map_get($skin, default);
   .m-btn-group.m-btn-#{$type} {
     .m-btn {
       &.active, &:hover, &:active, &:focus {
         // 没有定义hover 统一加深 5%
         $border-color: null;
-        @if (map_has_key($obj, hover)) {
-          $hover: map_get($obj, hover);
+        @if (map_has_key($skin, hover)) {
+          $hover: map_get($skin, hover);
           $border-color: map_get($hover, bd-color);
           @include btn-skin(map_get($hover, bg-color),
             map_get($hover, bd-color),

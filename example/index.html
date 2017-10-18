@@ -1,0 +1,249 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+  <head>
+    <!-- 声明文档使用的字符编码-->
+    <meta charset="utf-8">
+    <!-- IE 使用最高模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 为移动设备添加 viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 是否启用 WebApp 全屏模式-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 设置状态栏的背景颜色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- 禁止数字识自动别为电话号码-->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 不让android识别邮箱-->
+    <meta name="format-detection" content="email=no">
+    <title></title>
+    <!-- 页面描述 SEO-->
+    <meta name="description">
+    <meta name="keywords">
+    <link rel="stylesheet" href="../node_modules/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="../node_modules/highlight.js/styles/default.css">
+    <link rel="styleSheet" href="../stylesheets/doc/doc.css">
+    <link rel="styleSheet" href="../stylesheets/mui.css">
+    <script src="//at.alicdn.com/t/font_418070_m40wt7ohkjtf0f6r.js"></script>
+  </head>
+  <body>
+    <div class="doc-section">
+      <div class="markdown-body"><h2>按钮</h2>
+      </div>
+    </div>
+    <div class="doc-section">
+      <div class="example">
+        <div class="example-block"><a type="button" class="m-btn m-btn-primary">主体</a>
+          <button type="button" class="m-btn m-btn-success">成功</button>
+          <button type="button" class="m-btn m-btn-info">信息</button>
+          <button type="button" class="m-btn m-btn-warn">警告</button>
+          <button type="button" class="m-btn m-btn-danger">危险</button>
+          <button type="button" class="m-btn m-btn-danger disabled">禁止</button>
+          <button role="button" class="m-btn m-btn-link">链接按钮</button>
+        </div>
+        <div class="example-block">
+          <button type="button" class="m-btn m-btn-primary m-btn-sm">一般</button>
+          <button type="button" class="m-btn m-btn-success m-btn-sm">成功</button>
+          <button type="button" class="m-btn m-btn-info m-btn-sm">信息</button>
+          <button type="button" class="m-btn m-btn-warn m-btn-sm">警告</button>
+          <button type="button" class="m-btn m-btn-danger m-btn-sm">危险</button>
+          <button type="button" disabled="" class="m-btn m-btn-danger m-btn-sm">禁止</button>
+        </div>
+        <div class="example-block">
+          <button type="button" class="m-btn m-btn-success m-btn-lg">成功</button>
+          <button type="button" class="m-btn m-btn-success m-btn-lg disabled">Loading...</button>
+        </div>
+        <div class="example-block">
+          <button type="button" class="m-btn m-btn-primary m-btn-lg">
+            <svg aria-hidden="true" class="icon">
+              <use xlink:href="#mui-check"></use>
+            </svg><span class="text">&nbsp;主体</span>
+          </button>
+          <button type="button" class="m-btn m-btn-primary m-btn-lg">
+            <svg aria-hidden="true" class="icon">
+              <use xlink:href="#mui-check-active"></use>
+            </svg><span class="text">&nbsp;主体</span>
+          </button>
+        </div>
+        <div class="example-block">
+          <button type="button" class="m-btn m-btn-primary">
+            <svg aria-hidden="true" class="icon">
+              <use xlink:href="#mui-check"></use>
+            </svg><span class="text">&nbsp;主体</span>
+          </button>
+          <button type="button" class="m-btn m-btn-info">
+            <svg aria-hidden="true" class="icon">
+              <use xlink:href="#mui-check-active"></use>
+            </svg><span class="text">&nbsp;主体</span>
+          </button>
+        </div>
+      </div>
+      <div class="highlight"></div>
+    </div>
+    <div class="doc-section">
+      <div class="markdown-body"><h3>按钮组</h3>
+      </div>
+      <div class="example">
+        <div class="example-block">
+          <div class="m-btn-group">
+            <div class="m-btn m-btn-info">一号</div>
+            <div class="m-btn m-btn-info">二号</div>
+            <div class="m-btn m-btn-info">3号</div>
+            <div class="m-btn m-btn-info">4号</div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="m-btn-group m-btn-primary">
+            <div class="m-btn m-btn-info m-btn-sg">日</div>
+            <div class="m-btn m-btn-info m-btn-sg">周</div>
+            <div class="m-btn m-btn-info m-btn-sg">月</div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="m-btn-group m-btn-spacing">
+            <div class="m-btn-group">
+              <div class="m-btn m-btn-info">全部</div>
+              <div class="m-btn m-btn-info m-btn-sg">
+                <svg aria-hidden="true" class="icon">
+                  <use xlink:href="#mui-down"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="m-btn-group">
+              <div class="m-btn m-btn-info">全部撤销</div>
+              <div class="m-btn m-btn-info m-btn-sg">
+                <svg aria-hidden="true" class="icon">
+                  <use xlink:href="#mui-down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="m-btn-group m-btn-danger">
+            <div class="m-btn m-btn-info">一号</div>
+            <div class="m-btn m-btn-info">二号</div>
+            <div class="m-btn m-btn-info">3号</div>
+            <div class="m-btn m-btn-info">4号</div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="m-btn-group m-btn-primary">
+            <div class="m-btn m-btn-info">一号</div>
+            <div class="m-btn m-btn-info active">二号</div>
+            <div class="m-btn m-btn-info">3号</div>
+            <div class="m-btn m-btn-info disabled">4号</div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="m-btn-group m-btn-spacing">
+            <div class="m-btn m-btn-primary">一号</div>
+            <div class="m-btn m-btn-primary disabled">二号</div>
+            <div class="m-btn m-btn-warn">3号</div>
+            <div class="m-btn m-btn-primary">4号</div>
+          </div>
+        </div>
+      </div>
+      <div class="highlight"></div>
+    </div>
+    <div class="doc-section">
+      <div class="markdown-body"><h2>面板</h2>
+      </div>
+      <div class="example">
+        <div class="panel panel-info component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+            <div class="panel-delete">
+              <svg aria-hidden="true" class="icon">
+                <use xlink:href="#mui-delete"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="panel-body">
+            <p>Lorem ipsu dolor sit amet, consectetur adipisicing elit. Vitae quia aliquid sequi officiis iste quae dignissimos, corporis sed odio perferendis praesentium iure consequuntur facere ad nihil quo omnis, autem dicta.</p>
+          </div>
+          <div class="panel-footer">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+        </div>
+        <div class="panel panel-success panel-lg component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题</div>
+            <div class="panel-delete">
+              <svg aria-hidden="true" class="icon">
+                <use xlink:href="#mui-delete"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+          <div class="panel-footer">
+            <button type="button" class="m-btn m-btn-success">确定</button>
+            <button type="button" class="m-btn m-btn-info">取消</button>
+          </div>
+        </div>
+        <div class="panel panel-danger panel-sm component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+            <div class="panel-delete">
+              <svg aria-hidden="true" class="icon">
+                <use xlink:href="#mui-delete"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+        </div>
+        <div class="panel panel-warn component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+            <div class="panel-delete">
+              <svg aria-hidden="true" class="icon">
+                <use xlink:href="#mui-delete"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+          <div class="panel-footer">
+            <button type="button" class="m-btn m-btn-warn m-btn-sm">确定</button>
+            <button type="button" class="m-btn m-btn-info m-btn-sm">取消</button>
+          </div>
+        </div>
+        <div class="panel panel-primary component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+        </div>
+        <div class="panel panel-line-info component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quia aliquid sequi officiis iste quae dignissimos, corporis sed odio perferendis praesentium iure consequuntur facere ad nihil quo omnis, autem dicta.</div>
+        </div>
+        <div class="panel panel-line-success component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+        </div>
+        <div class="panel panel-line-danger component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+        </div>
+        <div class="panel panel-line-warn component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+        </div>
+        <div class="panel panel-line-primary component-space-bottom">
+          <div class="panel-heading">
+            <div class="panel-title">标题（MUI）</div>
+          </div>
+          <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus perspiciatis atque blanditiis modi ut, suscipit voluptatum possimus quo doloribus sapiente officia quaerat esse perferendis ducimus ab, provident consequatur deserunt quos.</div>
+        </div>
+      </div>
+      <div class="highlight"></div>
+    </div><p>[TOC]</p>
+  </body>
+</html>

@@ -1,5 +1,7 @@
 @import "compass/utilities/color";
 
+$box-sizing: content-box !default;
+
 $base-blue: #00a0e9; // 主色 主要用户按钮
 
 $base-withe: #ffffff;
@@ -22,9 +24,11 @@ $base-orange: #ec9700;
 
 $base-red: #ed6844;
 
+// 基础间距
+$base-gap: 16px;
 
 //字体
-$font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+$font-family: tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
 $font-size-base: 12px;
 $font-size-lg: 16px;
 $font-size-md: 14px;
@@ -35,7 +39,6 @@ $line-height: 16px;
 $base-disabled-bg: #f2f2f2;
 $base-disabled-fn: #c4c4c4;
 $base-disabled-bd: #e6e6e6;
-
 
 // 尺寸 内边距(vertical, horizontal) 字体大小(fz) 行高(lh)
 $md: (
@@ -48,7 +51,7 @@ $md: (
 $lg: (
   vertical: 8px,
   horizontal: 20px,
-  fz: $font-size-base,
+  fz: $font-size-lg,
   lh: $line-height
 );
 
@@ -65,7 +68,6 @@ $sg: (
   fz: $font-size-base,
   lh: $line-height
 );
-
 
 // 皮肤 背景色(bg-color) 边框色(bd-color) 字体颜色(ft-color)
 $primary: (

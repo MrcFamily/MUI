@@ -1,0 +1,22 @@
+@import "variables/global";
+
+// 设置组件间距
+.component-space {
+  margin: $base-gap;
+}
+
+.component-space-bottom {
+  margin-bottom: $base-gap;
+}
+
+.component-space-top {
+  margin-top: $base-gap;
+}
+
+.component-space-left {
+  margin-left: $base-gap;
+}
+
+.component-space-right {
+  margin-right: $base-gap;
+}

@@ -1,0 +1,23 @@
+@import "../../variables/global";
+
+$panel-line-info: (
+  default: (
+    bg-color: $base-black-light,
+    bd-color: $base-gray-darker,
+    ft-color: $base-black-light
+  )
+);
+
+$panel-line-skin: (primary, $primary),
+  (info, $panel-line-info),
+  (success, $success),
+  (warn, $warn),
+  (danger, $danger);
+
+$panel-skin: (primary, $primary),
+  (info, $info),
+  (success, $success),
+  (warn, $warn),
+  (danger, $danger);
+
+$panel-size: (lg, $lg), (md, $md), (sm, $sm), (sg, $sg), (default, $md);
